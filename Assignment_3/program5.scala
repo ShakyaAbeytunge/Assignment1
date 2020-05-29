@@ -10,14 +10,13 @@ object program5 extends App {
     if (isEven(n)) false else true
   }
 
-  def printEven(n: Int): Any={
-    if(n>0) printEven(n-1)
-    if(isEven(n)) println(n)
+  def sumEven(n: Int): Int={
+    if (n==2) 2 else if (isOdd(n)) sumEven(n-1) else n+sumEven(n-2)
   }
 
   print("Enter a number : ")
   val n=readInt()
-  printf("The even number series less than %d;\n",n)
-  printEven(n)
+  printf("Sum of the even number series less than %d;\n",n)
+  println(sumEven(n-1))
 
 }
